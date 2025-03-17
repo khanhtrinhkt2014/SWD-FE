@@ -9,7 +9,7 @@ const SupportSection = () => {
           <span className="text-black">Manage</span> Caseloads
         </h2>
         <p className="text-gray-600 mt-4">
-          Oasis Support Counselors and monitored peer forums are available 24/7.
+          MentalEducare Support Counselors and monitored peer forums are available 24/7.
           You can also easily refer students to Support Counseling, Teletherapy,
           or assign content to manage your caseload.
         </p>
@@ -27,7 +27,7 @@ const SupportSection = () => {
 
       <div className="w-full md:w-1/2 flex justify-center">
         <img
-          src="https://oasiseducation.com/wp-content/uploads/2024/02/Group-3184461.png"
+          src="https://m.media-amazon.com/images/I/71D0Ca-jfUL.jpg"
           alt="Support Counseling"
           className="w-full md:max-w-md rounded-3xl shadow-lg"
         />

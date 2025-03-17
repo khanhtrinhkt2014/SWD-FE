@@ -32,7 +32,7 @@ const FacultySupport = () => {
         Supporting <span className="font-bold">Faculty & Staff</span>
       </h2>
       <p className="text-gray-600 mt-2">
-        Oasis also has unique content, tools, guides, and training for your
+        MentalEducare also has unique content, tools, guides, and training for your
         faculty and staff.
       </p>
       <div className="w-20 h-1 bg-yellow-500 mx-auto my-4"></div>

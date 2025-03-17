@@ -14,34 +14,16 @@ const Footer = () => {
       <div className="container mx-auto py-10 px-6 flex flex-col md:flex-row md:justify-between">
         <div className="md:w-1/3 text-center md:text-left">
           <img
-            src="https://oasiseducation.com/wp-content/uploads/2020/06/cropped-Oasis-logo-blue-150x63.png"
-            alt="Oasis Logo"
+            src="/src/assets/MentalEducareHealth.png"
+            alt="MentalEducare"
             className="mx-auto md:mx-0 w-40"
           />
           <p className="mt-4 text-sm">
-            Oasis helps K-12 and higher education institutions support student,
-            faculty, and staff wellbeing with access to mental health
-            professionals and evidence-based content.
+          Bridging Minds, Connecting Hearts – Support for Students, Parents, and Mental Health Professionals.
           </p>
           <div className="flex justify-center md:justify-start mt-4 space-x-4 text-blue-500">
             <FaInstagram size={20} />
             <FaFacebookF size={20} />
-            <FaTwitter size={20} />
-            <FaYoutube size={20} />
-            <FaLinkedinIn size={20} />
-            <FaPinterestP size={20} />
-          </div>
-          <div className="mt-4">
-            <img
-              src="https://oasiseducation.com/wp-content/uploads/2022/01/PartnershipLogo_Horizantal_Disclaimer-Web-Site.png"
-              alt="NASPA Partner"
-              className="w-32 mx-auto md:mx-0"
-            />
-            <img
-              src="https://images.dmca.com/Badges/dmca_protected_sml_120l.png?ID=cc08cfee-5e66-417b-b8e9-a978e12996d5"
-              alt="DMCA Protected"
-              className="w-20 mx-auto md:mx-0 mt-2"
-            />
           </div>
         </div>
 
@@ -79,15 +61,11 @@ const Footer = () => {
         <div className="md:w-1/4 mt-8 md:mt-0">
           <h3 className="font-semibold text-lg text-blue-700">Get In Touch</h3>
           <p className="text-sm mt-2">
-            129 N Pennsylvania Ave, Greensburg, PA 15601
+          7 Đ. D1, Long Thanh My, Thu Đuc, Ho Chi Minh 700000
           </p>
           <div className="border-t-2 border-yellow-400 w-10 my-2"></div>
-          <p className="text-sm">Email: info@oasiseducation.com</p>
-          <p className="text-sm">Phone: (724) 252-4531</p>
-          <p className="text-sm">Fax: (724) 348-1917</p>
-          <div className="border-t-2 border-yellow-400 w-10 my-2"></div>
-          <p className="text-blue-600 text-sm">💬 Talk to Sales</p>
-          <p className="text-blue-600 text-sm">❓ Help & Feedback</p>
+          <p className="text-sm">Email: MentalEducare@gmail.com</p>
+          <p className="text-sm">Phone: 0123456789</p>       
         </div>
       </div>
 

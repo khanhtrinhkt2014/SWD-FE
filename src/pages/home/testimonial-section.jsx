@@ -13,7 +13,7 @@ const TestimonialSection = () => {
         <div className="w-20 h-1 bg-yellow-500 mx-auto my-4"></div>
 
         <p className="text-gray-600 italic max-w-2xl mx-auto mt-6">
-          “Oasis fosters a supportive climate at our school. Daily well-being
+          “MentalEducare fosters a supportive climate at our school. Daily well-being
           assessments not only empower students to express themselves but also
           equip adults to identify and proactively support those who may need
           extra care. Additionally, out-of-hours counselor access provides a

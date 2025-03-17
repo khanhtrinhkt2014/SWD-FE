@@ -7,12 +7,15 @@ import Dashboard from "../pages/admin/dashboard";
 import ManageUser from "../pages/admin/manage-user";
 import SurveyManagement from "../pages/admin/manage-survey";
 import AppointmentManagement from "../pages/admin/manage-appointment";
-
+import LoginPage from "../pages/authpage/login-page";
+import SignupPage from "../pages/authpage/signup-page";
 const MainRoute = () => {
   return (
     <Routes>
       <Route element={<BaseLayout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/authpage/login-page" element={<LoginPage />} />
+        <Route path="/authpage/signup-page" element={<SignupPage />} />
       </Route>
       <Route element={<DashboardLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />

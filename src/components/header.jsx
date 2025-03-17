@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
-
+import { Button } from "antd";
+import { Link } from "react-router-dom";
 const Header = () => {
   const menuItems = [
     { title: "About" },
@@ -13,11 +14,13 @@ const Header = () => {
     <header className="w-full bg-white shadow-sm">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <div className="flex items-center">
-          <img
-            src="https://oasiseducation.com/wp-content/uploads/2020/06/cropped-Oasis-logo-blue.png"
-            alt="Oasis Logo"
-            className="h-10"
-          />
+        <Link to="/">
+            <img
+              src="/src/assets/MentalEducareHealth.png"
+              alt="MentalEducare"
+              className="h-10 cursor-pointer"
+            />
+          </Link>
         </div>
 
         {/* Navigation */}
@@ -41,6 +44,18 @@ const Header = () => {
             </div>
           ))}
         </nav>
+        <div className="hidden md:flex space-x-4">
+          <Link to="/authpage/login-page">
+            <Button type="default" className="text-gray-700">
+              Login
+            </Button>
+          </Link>
+          <Link to="/authpage/signup-page">
+            <Button type="primary">
+              Sign Up
+            </Button>
+          </Link>
+        </div>
       </div>
     </header>
   );

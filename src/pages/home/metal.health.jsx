@@ -16,19 +16,18 @@ const MentalHealthSection = () => {
     <section className="flex flex-col md:flex-row items-center gap-10 px-10 py-16 max-w-6xl mx-auto">
       <div className="w-full md:w-1/2">
         <img
-          src="https://oasiseducation.com/wp-content/uploads/2024/02/Scale-Expand-Mental-Health-Services.jpg"
+          src="https://img-c.udemycdn.com/course/750x422/5487300_2f39.jpg"
           alt="Mental Health Support"
           className="w-full rounded-3xl shadow-lg"
         />
       </div>
 
       <div className="w-full md:w-1/2">
-        <h2 className="text-4xl font-bold text-gray-900">Scale & Expand</h2>
         <h3 className="text-3xl font-semibold text-gray-800 mt-2">
           Mental Health Services
         </h3>
         <p className="text-gray-600 mt-4">
-          Oasis eliminates wait times for mental health support and reduces
+          MentalEducare eliminates wait times for mental health support and reduces
           overwhelming caseloads for counseling center staff.
         </p>
 
