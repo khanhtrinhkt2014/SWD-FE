@@ -9,6 +9,7 @@ import SurveyManagement from "../pages/admin/manage-survey";
 import AppointmentManagement from "../pages/admin/manage-appointment";
 import LoginPage from "../pages/authpage/login-page";
 import SignupPage from "../pages/authpage/signup-page";
+import Booking from "../pages/home/booking";
 const MainRoute = () => {
   return (
     <Routes>
@@ -16,6 +17,7 @@ const MainRoute = () => {
         <Route path="/" element={<Home />} />
         <Route path="/authpage/login-page" element={<LoginPage />} />
         <Route path="/authpage/signup-page" element={<SignupPage />} />
+        <Route path="/booking" element={<Booking />} />
       </Route>
       <Route element={<DashboardLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />

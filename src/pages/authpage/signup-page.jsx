@@ -11,39 +11,69 @@ const SignupPage = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <Card className="w-96 shadow-lg">
-        <Title level={3} className="text-center">Đăng Ký</Title>
-        
+      <Card className="w-96 shadow-lg p-6">
+        <Title level={2} className="text-center">Register</Title>
+
         <Form layout="vertical" onFinish={onFinish}>
           <Form.Item
-            label="Tên đầy đủ"
-            name="fullname"
-            rules={[{ required: true, message: "Vui lòng nhập họ tên!" }]}
-          >
-            <Input placeholder="Nhập họ và tên" />
-          </Form.Item>
-
-          <Form.Item
-            label="Email"
+            label={<span className="font-medium text-red-500">* Email</span>}
             name="email"
-            rules={[{ required: true, message: "Vui lòng nhập email!" }]}
+            rules={[
+              { required: true, message: "Please enter your email!" },
+              { type: "email", message: "Invalid email format!" },
+            ]}
           >
-            <Input placeholder="Nhập email" />
+            <Input placeholder="Enter your email" />
           </Form.Item>
 
           <Form.Item
-            label="Mật khẩu"
-            name="password"
-            rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
+            label={<span className="font-medium text-red-500">* Name</span>}
+            name="username"
+            rules={[{ required: true, message: "Please enter your username!" }]}
           >
-            <Input.Password placeholder="Nhập mật khẩu" />
+            <Input placeholder="Enter your username" />
           </Form.Item>
 
-          <Button type="primary" htmlType="submit" block>Đăng Ký</Button>
+          <Form.Item
+            label={<span className="font-medium text-red-500">* Password</span>}
+            name="password"
+            rules={[{ required: true, message: "Please enter your password!" }]}
+          >
+            <Input.Password placeholder="Enter your password" />
+          </Form.Item>
+
+          <Form.Item
+            label={<span className="font-medium text-red-500">* Confirm Password</span>}
+            name="confirmPassword"
+            dependencies={["password"]}
+            rules={[
+              { required: true, message: "Please re-enter your password!" },
+              ({ getFieldValue }) => ({
+                validator(_, value) {
+                  if (!value || getFieldValue("password") === value) {
+                    return Promise.resolve();
+                  }
+                  return Promise.reject(new Error("Passwords do not match!"));
+                },
+              }),
+            ]}
+          >
+            <Input.Password placeholder="Re-enter your password" />
+          </Form.Item>
+
+          <Button
+            type="primary"
+            htmlType="submit"
+            block
+            className="bg-gradient-to-r from-[#2DB4F7] to-[#35A4E0] hover:opacity-80 text-white"
+          >
+            Register
+          </Button>
         </Form>
 
         <div className="text-center mt-4">
-          <Text>Đã có tài khoản?</Text> <Link to="/login">Đăng nhập</Link>
+          <Text>Already have an account? </Text>
+          <Link to="/login" className="text-blue-500">Sign in</Link>
         </div>
       </Card>
     </div>

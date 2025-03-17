@@ -10,13 +10,16 @@ const Banner = () => {
           className="w-36 mb-5"
         />
         <h1 className="text-4xl font-bold mb-5">
-        With you on the journey to emotional balance
+          With you on the journey to emotional balance
         </h1>
         <p className="text-lg mb-6">
-        Bridging Minds, Connecting Hearts – Support for Students, Parents, and Mental Health Professionals.
+          Bridging Minds, Connecting Hearts – Support for Students, Parents, and Mental Health Professionals.
         </p>
         <div className="flex gap-4">
-          <button className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500">
+          <button
+            onClick={() => (window.location.href = "/booking")}
+            className="bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500"
+          >
             Talk To Our Team
           </button>
         </div>
