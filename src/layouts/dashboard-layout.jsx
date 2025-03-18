@@ -24,13 +24,33 @@ const DashboardLayout = () => {
       label: "Profile",
       onClick: () => navigate("/dashboard/profile"),
     },
-    { key: "2", label: "Logout", onClick: () => console.log("Logging out...") },
+    {
+      key: "2",
+      label: "Logout",
+      onClick: () => navigate("/")
+    },
   ];
 
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical" />
+        <div
+          style={{
+            height: 64,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            background: "white",
+          }}
+          onClick={() => navigate("/")}
+        >
+          <img
+            src="/src/assets/MentalEducareHealth.png"
+            alt="MentalEduCare Logo"
+            style={{ width: collapsed ? 40 : 120, height: "auto" }}
+          />
+        </div>
         <Menu
           theme="dark"
           mode="inline"

@@ -1,13 +1,25 @@
 import React from "react";
-import { Form, Input, Button, Card, Typography } from "antd";
-import { Link } from "react-router-dom";
+import { Form, Input, Button, Card, Typography, message } from "antd";
+import { Link, useNavigate } from "react-router-dom";
 import { GoogleOutlined } from "@ant-design/icons";
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
   const onFinish = (values) => {
-    console.log("Login Success:", values);
+    const { email, password } = values;
+
+    if (email === "admin@gmail.com" && password === "123") {
+      message.success("Admin login successful!");
+      navigate("/dashboard");
+    } else if (email === "student@gmail.com" && password === "123") {
+      message.success("User login successful!");
+      navigate("/");
+    } else {
+      message.error("Invalid email or password!");
+    }
   };
 
   return (
@@ -17,7 +29,7 @@ const LoginPage = () => {
 
         <Form layout="vertical" onFinish={onFinish}>
           <Form.Item
-            label={<span className="font-medium text-red-500">* Email</span>}
+            label="Email"
             name="email"
             rules={[
               { required: true, message: "Please enter your email!" },
@@ -28,7 +40,7 @@ const LoginPage = () => {
           </Form.Item>
 
           <Form.Item
-            label={<span className="font-medium text-red-500">* Password</span>}
+            label="Password"
             name="password"
             rules={[{ required: true, message: "Please enter your password!" }]}
           >
@@ -37,19 +49,13 @@ const LoginPage = () => {
 
           <div className="text-right mb-4">
             <Link to="/forgot-password" className="text-blue-500">
-              Forgot password
+              Forgot password?
             </Link>
           </div>
 
-          <Button
-            type="primary"
-            htmlType="submit"
-            block
-            className="bg-gradient-to-r from-[#2DB4F7] to-[#35A4E0] hover:opacity-80 text-white"
-          >
+          <Button type="primary" htmlType="submit" block>
             Login
           </Button>
-
         </Form>
 
         <div className="relative flex items-center justify-center my-4">
