@@ -1,10 +1,6 @@
 import React from "react";
 import {
   FaFacebookF,
-  FaTwitter,
-  FaYoutube,
-  FaLinkedinIn,
-  FaPinterestP,
   FaInstagram,
 } from "react-icons/fa";
 
@@ -30,15 +26,10 @@ const Footer = () => {
         <div className="md:w-1/6 mt-8 md:mt-0">
           <h3 className="font-semibold text-lg text-blue-700">About</h3>
           <ul className="mt-2 space-y-1 text-sm">
-            <li>Higher Education</li>
-            <li>K-12</li>
-            <li>About Oasis</li>
-            <li>Clinical Approach</li>
-            <li>Oasis Team</li>
+            <li>About MentalEducare</li>
+            <li>MentalEducare Team</li>
             <li>Security</li>
-            <li>Partnerships</li>
             <li>FAQ's</li>
-            <li>Pricing</li>
           </ul>
         </div>
 
@@ -48,13 +39,10 @@ const Footer = () => {
           </h3>
           <ul className="mt-2 space-y-1 text-sm">
             <li>Wellbeing App</li>
-            <li>Teletherapy</li>
-            <li>Admin Console</li>
-            <li>EHR/EMR Software</li>
             <li>Blog</li>
             <li>Case Studies</li>
             <li>Free Resources</li>
-            <li>Download the Oasis App</li>
+            <li>Download the MentalEducare App</li>
           </ul>
         </div>
 

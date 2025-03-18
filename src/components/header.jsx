@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const menuItems = [
     { title: "About" },
-    { title: "Solutions" },
+    {
+      title: "Solutions",
+      subItems: [
+        { title: "Mental Health Assessment", link: "/survey" },
+        { title: "Support Programs", link: "/support-program" }
+      ]
+    },
     { title: "Who We Serve" },
     { title: "Resources" },
     { title: "Contact Us" },
@@ -14,7 +20,7 @@ const Header = () => {
     <header className="w-full bg-white shadow-sm">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <div className="flex items-center">
-        <Link to="/">
+          <Link to="/">
             <img
               src="/src/assets/MentalEducareHealth.png"
               alt="MentalEducare"
@@ -29,18 +35,19 @@ const Header = () => {
             <div key={index} className="relative group">
               <button className="flex items-center space-x-1 text-black hover:text-black transition">
                 <span>{item.title}</span>
-                <ChevronDown className="w-4 h-4" />
+                {item.subItems && <ChevronDown className="w-4 h-4" />}
               </button>
-              <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-                <ul className="py-2">
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                    Option 1
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                    Option 2
-                  </li>
-                </ul>
-              </div>
+              {item.subItems && (
+                <div className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                  <ul className="py-2">
+                    {item.subItems.map((subItem, subIndex) => (
+                      <li key={subIndex} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        <Link to={subItem.link}>{subItem.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           ))}
         </nav>
