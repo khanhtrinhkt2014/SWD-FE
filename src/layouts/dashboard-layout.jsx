@@ -22,7 +22,7 @@ const DashboardLayout = () => {
     {
       key: "1",
       label: "Profile",
-      onClick: () => navigate("/dashboard/profile"),
+      onClick: () => navigate("/profile"),
     },
     {
       key: "2",

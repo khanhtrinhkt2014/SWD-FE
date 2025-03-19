@@ -1,17 +1,35 @@
 import { ChevronDown } from "lucide-react";
-import { Button } from "antd";
-import { Link } from "react-router-dom";
+import { Avatar, Button, Dropdown, Menu, Space } from "antd";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+
 const Header = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    navigate("/");
+  };
+
   const menuItems = [
     { title: "About" },
     {
       title: "Solutions",
       subItems: [
         { title: "Mental Health Assessment", link: "/survey" },
-        { title: "Support Programs", link: "/support-program" }
-      ]
+        { title: "Support Programs", link: "/support-program" },
+      ],
     },
-    { title: "Who We Serve" },
+    { title: "Blog" },
     { title: "Resources" },
     { title: "Contact Us" },
   ];
@@ -51,17 +69,39 @@ const Header = () => {
             </div>
           ))}
         </nav>
+
+        {/* Hiển thị avatar hoặc Login/Signup */}
         <div className="hidden md:flex space-x-4">
-          <Link to="/authpage/login-page">
-            <Button type="default" className="text-gray-700">
-              Login
-            </Button>
-          </Link>
-          <Link to="/authpage/signup-page">
-            <Button type="primary">
-              Sign Up
-            </Button>
-          </Link>
+          {user ? (
+            <Dropdown
+              overlay={
+                <Menu>
+                  <Menu.Item key="profile">
+                    <Link to="/profile">Profile</Link>
+                  </Menu.Item>
+                  <Menu.Item key="logout" onClick={handleLogout}>
+                    Logout
+                  </Menu.Item>
+                </Menu>
+              }
+              trigger={["click"]}
+            >
+              <Space>
+                <Avatar src={user.avatar} />
+              </Space>
+            </Dropdown>
+          ) : (
+            <>
+              <Link to="/authpage/login-page">
+                <Button type="default" className="text-gray-700">
+                  Login
+                </Button>
+              </Link>
+              <Link to="/authpage/signup-page">
+                <Button type="primary">Sign Up</Button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </header>
