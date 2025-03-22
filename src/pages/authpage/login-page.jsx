@@ -2,23 +2,44 @@ import React from "react";
 import { Form, Input, Button, Card, Typography, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleOutlined } from "@ant-design/icons";
+import { UserService } from "../../services/user.service";
 
 const { Title } = Typography;
 
 const LoginPage = () => {
   const navigate = useNavigate();
 
-  const onFinish = (values) => {
+  const onFinish = async (values) => {
     const { email, password } = values;
 
-    if (email === "admin@gmail.com" && password === "123") {
-      message.success("Admin login successful!");
-      navigate("/dashboard");
-    } else if (email === "student@gmail.com" && password === "123") {
-      message.success("User login successful!");
-      navigate("/");
-    } else {
-      message.error("Invalid email or password!");
+    // if (email === "admin@gmail.com" && password === "123") {
+    //   message.success("Admin login successful!");
+    //   navigate("/dashboard");
+    // } else if (email === "student@gmail.com" && password === "123") {
+    //   message.success("User login successful!");
+    //   navigate("/");
+    // } else {
+    //   message.error("Invalid email or password!");
+    // }
+
+    try {
+      const payload = {
+        email,
+        password
+      }
+      const response = await UserService.login(payload)
+      localStorage.setItem("accessToken", response.token)
+      localStorage.setItem("user", JSON.stringify(response))
+      if(response.role === "HOCSINH")
+        {
+  navigate("/")
+ }     
+ if(response.role === "ADMIN")
+  {
+navigate("/dashboard")
+}     
+    } catch (error) {
+      alert("Login Fail")
     }
   };
 

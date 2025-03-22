@@ -1,12 +1,27 @@
 import React from "react";
-import { Form, Input, Button, Card, Typography } from "antd";
-import { Link } from "react-router-dom";
+import { Form, Input, Button, Card, Typography, message } from "antd";
+import { Link, useNavigate } from "react-router-dom";
+import { UserService } from "../../services/user.service";
 
 const { Title, Text } = Typography;
 
 const SignupPage = () => {
-  const onFinish = (values) => {
-    console.log("Signup Success:", values);
+  const navigate = useNavigate()
+  const onFinish = async (values) => {
+   try {
+    const payload = 
+      {
+        "email": values.email,
+        "name": values.name,
+        "password": values.password,
+        "role": "HOCSINH"
+      }
+    await UserService.register(payload)
+    alert("Register Sucess")
+    navigate("/authpage/login-page")
+   } catch (error) {
+    message.error("Register failed")
+   }
   };
 
   return (
